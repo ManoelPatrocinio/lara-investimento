@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,4 @@ Route::get('/', function () {
 //*================== route to user auth =============== */
 
 Route::get('/login', ['uses' => 'Controller@makeLogin']);
+Route::post('/login', ['as'=> 'user.login', 'uses' => 'App\Http\Controllers\Controller\Controller@login']);

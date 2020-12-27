@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 /**
  * Class CreateUsersTable.
@@ -27,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->char('gender',1)->nullable();
             $table->text('notes')->nullable();
 
-            //auth data 
+            //auth data
 
             $table->string('email',80)->unique();
             $table->string('password',254)->nullable();

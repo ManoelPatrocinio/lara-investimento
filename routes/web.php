@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -21,5 +22,6 @@ Route::get('/', function () {
 
 //*================== route to user auth =============== */
 
-Route::get('/login', ['uses' => 'Controller@makeLogin']);
-Route::post('/login', ['as'=> 'user.login', 'uses' => 'App\Http\Controllers\Controller\Controller@login']);
+Route::get('/login',     ['uses' => 'Controller@makeLogin']);
+Route::post('/login',    ['as'=> 'user.login', 'uses' => 'DashboardController@auth']);
+Route::get('/dashboard', ['as'=> 'user.dashboard', 'uses' => 'DashboardController@index']);

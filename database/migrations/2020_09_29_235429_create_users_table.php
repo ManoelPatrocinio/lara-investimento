@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
 
             //auth data
 
-            $table->string('email',80)->unique();
+            $table->string('email',81)->unique();
             $table->string('password',254)->nullable();
 
             //permission
@@ -39,7 +39,7 @@ class CreateUsersTable extends Migration
 
             $table->rememberToken();
             $table->timestamps();
-            $table->timestamps();
+            $table->softDeletes();
 		});
 	}
 

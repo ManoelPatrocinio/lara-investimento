@@ -11,11 +11,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
-    public function Login(){
-    	echo "OKOKOK";
-    }
-
     public function makeLogin(){
 		return view('User.login');
 	}

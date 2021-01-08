@@ -1,26 +1,41 @@
-<nav id="menu_principal">
-    <ul>
-        <li>
-            <a href="">
-                <i class=""></i>
-                <h3>Usuários</h3>
-            </a>
-        </li>
+<nav >
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
 
-        <li>
-            <a href="">
-                <i class=""></i>
-                <h3>Instituições</h3>
-            </a>
-        </li>
+        <a href="#" data-activates="menu-mobile" class="button-collapse">
+            <i class="material-icons">menu</i>
+        </a>
 
-        <li>
-            <a href="">
-                <i class=""></i>
-                <h3>Grupos</h3>
-            </a>
-        </li>
+        <ul class="right hide-on-med-and-down">
 
-    </ul>
+            <li>
+                <a href="">Usuários</a>
+            </li>
 
+            <li>
+                <a href="">Instituições</a>
+            </li>
+
+            <li>
+                <a href="">Grupos</a>
+            </li>
+
+        </ul>
+
+        <ul class="side-nav" id="menu-mobile">
+
+            <li>
+                <a href="">Usuários</a>
+            </li>
+
+            <li>
+                <a href="">Instituições</a>
+            </li>
+
+            <li>
+                <a href="">Grupos</a>
+            </li>
+
+        </ul>
+    </div>
 </nav>

@@ -1,0 +1,32 @@
+
+                                **********************************
+                                --------- Page Master ------------
+                                **********************************
+
+                    Função:Pagina principal, onde será incorparado os demais elementos
+
+                                --------------------------
+                                        header
+                                --------------------------
+
+Linha 12: Importamos o arquivo de fontes “Material Icons” do Google, que contém os ícones do Materialize. O ícone do menu responsivo, por exemplo, só será exibido se esse arquivo for importado;
+
+Linha 13: Importamos o arquivo CSS do Materialize que contém as classes para estilizar a página;
+
+Linha 15: Com a tag meta viewport, indicamos ao browser que essa página deve ser otimizada para visualização em dispositivos móveis. Com ela, definimos que a largura da viewport deve ser igual à largura do device, e que a página deve ser escalonada para ocupar toda a tela;
+
+Linha 17: Importamos a biblioteca jQuery, que é uma dependência dos recursos JavaScript do Materialize. Portanto, é fundamental que essa linha apareça antes da importação do arquivo .js do framework (linha 10);
+
+Linha 18: Importamos o arquivo JavaScript do Materialize, importante para garantir o funcionamento de alguns recursos, como o menu responsivo que veremos mais adiante.
+
+
+Linha 37 a 41: Código JavaScript para ativar o menu lateral responsivo,A função sideNav() fará com que o botão com a classe button-collapse atue de forma a expandir o menu lateral.
+
+
+                                **********************************
+                                --------- Page Menu lateral ------------
+                                **********************************
+
+Lista de links que serão posicionados no lado direito (classe right) da navbar. A classe hide-on-med-and-down fará com que esses links sejam ocultados em tablets e dispositivos menores.
+Esse link, que contém um ícone de menu hambúrguer, será exibido quando a página for visualizada em uma tela pequena. O atributo data-activates aponta para o id da tag ul definida logo abaixo e que representa o menu lateral;
+Adicionamos novamente a lista de links, mas agora com a classe side-nav, que representa o menu lateral a ser exibido no modo mobile.

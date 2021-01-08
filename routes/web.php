@@ -23,5 +23,7 @@ Route::get('/', function () {
 //*================== route to user auth =============== */
 
 Route::get('/login',     ['uses' => 'Controller@makeLogin']);
+Route::get('/lo',     ['uses' => 'Controller@Login']);
+
 Route::post('/login',    ['as'=> 'user.login', 'uses' => 'DashboardController@auth']);
 Route::get('/dashboard', ['as'=> 'user.dashboard', 'uses' => 'DashboardController@index']);

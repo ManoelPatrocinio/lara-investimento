@@ -15,6 +15,9 @@ class Controller extends BaseController
 		return view('User.login');
 	}
 
+    public function Login(){
+		return view('User.index');
+	}
 
 }
 

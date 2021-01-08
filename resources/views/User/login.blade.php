@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Login | Investimentos</title>
     <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="background">
-    
+
+    <div id="background" class="login">
+       <img src="{{ asset('asset/images/investiment.jpg') }}" alt="img-investimetos">
     </div>
-	<section id="conteudo-view" class="login">
+
+
+    <div id="conteudo-view" class="login">
 
         <h1>Investindo</h1>
         <h3>O nosso gerenciador de investimentos</h3>
@@ -25,6 +30,8 @@
             {!! Form::submit('Entrar') !!}
             </label>
         {!! Form::close() !!}
-	</section>
+    </div>
+    <div class="login"></div>
+
 </body>
 </html>

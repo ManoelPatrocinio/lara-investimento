@@ -16,30 +16,36 @@ Stylesheet to login page
 ==========================
 */
 
-div.login{
-    display: inline-block;
-
+.login{
+    margin:0px !important;
 }
 
 
-div#backgound{
-    background-color:#00ff9c;
-    width: 65%;
+div#background{
+    position:absolute;
+    width:70%;
+    height:100%;
+    margin-left: 0% !important;
+
 }
-div img{
-    width: 65%;
+#img{
+    width: 100%;
     height: 100%;
 }
 
+div#conteudo-form{
+    float: right;
+    width:28%;
+    height: 100%;
+    padding: 1%;
+    background-color:#51dca6;
+    background:#51dca6;
 
-div#conteudo-view{
-    float: left;
-    background:#3b3d3d;
-    width: 32%;
-    text-align: left;
 }
 
-div#conteudo-view h1{
+
+
+div#conteudo-form h1{
     float: left;
     width:100%;
     font:3em 'Fredoka One', cursive;
@@ -48,7 +54,7 @@ div#conteudo-view h1{
     padding:20px;
 }
 
-div#conteudo-view h1{
+div#conteudo-form h1{
     float: left;
     width:100%;
     font:3em 'Fredoka One', cursive;
@@ -57,8 +63,8 @@ div#conteudo-view h1{
 
 }
 
-div#conteudo-view h3,
-div#conteudo-view form p{
+div#conteudo-form h3,
+div#conteudo-form form p{
     float: left;
     width:100%;
     font: .8em 'Fredoka One', cursive;
@@ -67,25 +73,25 @@ div#conteudo-view form p{
     margin-left:5%;
 }
 
-div#conteudo-view form,
-div#conteudo-view form label{
+div#conteudo-form form,
+div#conteudo-form form label{
     float:left;
     width:100%;
     margin-bottom:10px;
 }
-div#conteudo-view form p{
+div#conteudo-form form p{
     font-size:1.25em;
     margin-left:5%;
     margin-bottom:10px;
 
 }
 
-div#conteudo-view form{
+div#conteudo-form form{
     margin-top:10px;
 }
 
-div#conteudo-view form input[type="submit"],
-div#conteudo-view form label input{
+div#conteudo-form form input[type="submit"],
+div#conteudo-form form label input{
     margin-left:5%;
     width:80%;
     height:40px;
@@ -96,7 +102,7 @@ div#conteudo-view form label input{
     font:1em 'Arial';
 }
 
-div#conteudo-view form input[type="submit"]{
+div#conteudo-form form input[type="submit"]{
     width:60%;
     margin-top:15px;
     margin-left:20%;
@@ -124,11 +130,16 @@ nav ul{
 nav ul li {
     width: 30%;
     height: 30%;
-    padding: 6%;
+
     margin-left: 3%;
     margin-top: 3%;
 }
 
 nav ul li a {
     font: 1.3em 'Fredoka One', cursive;
+    padding: 6%;
+}
+
+nav ul li a:hover{
+    color: #00ff9c;
 }

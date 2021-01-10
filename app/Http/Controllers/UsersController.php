@@ -45,22 +45,12 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $users = $this->repository->all();
 
-        if (request()->wantsJson()) {
 
-            return response()->json([
-                'data' => $users,
-            ]);
-        }
-
-        return view('users.index', compact('users'));
-    }
-
+    */
+    public function Index(){
+		return view('User.index');
+	}
     /**
      * Store a newly created resource in storage.
      *

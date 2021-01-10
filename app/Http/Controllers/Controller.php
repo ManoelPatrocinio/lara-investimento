@@ -11,13 +11,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function makeLogin(){
+    public function Login(){
 		return view('User.login');
 	}
 
-    public function Login(){
-		return view('User.index');
-	}
+  
 
 }
 

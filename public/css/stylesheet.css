@@ -16,6 +16,10 @@ Stylesheet to login page
 ==========================
 */
 
+body{
+    background-color: #313636;
+}
+
 .login{
     margin:0px !important;
 }
@@ -114,13 +118,13 @@ div#conteudo-form form input[type="submit"]{
 
 /*
 ==========================
-Stylesheet to menu-lateral page master
+Stylesheet to menu-superior page master
 ==========================
 */
 
 div.nav-wrapper{
 
-    background: #4d5252;
+    background: #1e1f1f;
 
 }
 
@@ -143,3 +147,63 @@ nav ul li a {
 nav ul li a:hover{
     color: #00ff9c;
 }
+
+/*
+==========================
+Stylesheet to conteiner index page
+==========================
+*/
+
+div.container-form{
+    background-color: #4d5252;
+    width: 70%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3%;
+    padding: 3%;
+}
+
+form.form-padrao label{
+    width: 2%;
+    height: 100%;
+    background-color: #4d5252;
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    padding: 1px 5px;
+}
+form.form-padrao label span{
+    background-color: #4d5252;
+    color: #f3f3f3;
+}
+
+form.form-padrao label input{
+    position: relative;
+    display: block;
+    background-color: #f3f3f3;
+    border-color: #0aaa67;
+    color: #1e1f1f;
+    border-radius: 25px;
+    padding: 0 10px 0 10px;
+
+}
+
+form.form-padrao label.submit input{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    line-height: 1.5;
+    background: #0ad181;
+    border-color: #0aaa67;
+    border-radius: 25px;
+    color: #fff; 
+}
+
+

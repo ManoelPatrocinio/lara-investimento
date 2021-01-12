@@ -9,7 +9,7 @@
         <ul class="right hide-on-med-and-down">
 
             <li>
-                <a href="">Usuários</a>
+                <a href="{{ route('user.index')}}">Usuários</a>
             </li>
 
             <li>

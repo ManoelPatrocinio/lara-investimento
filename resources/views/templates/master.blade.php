@@ -21,13 +21,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 
 
+
 </body>
     @yield('css-view')
 
 </head>
 
 <body>
-    @include('templates.menu-lateral')
+    @include('templates.menu-superior')
     @yield('conteudo-view')
     @yield('js-view')
 

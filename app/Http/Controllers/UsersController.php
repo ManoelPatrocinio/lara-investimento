@@ -41,8 +41,6 @@ class UsersController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-
-
     */
     public function Index(){
          $users = $this->repository->all();
@@ -63,12 +61,6 @@ class UsersController extends Controller
     {
         $request = $this->service->store($request->all());  //cria um usuáŕio atraves do UserService
         $usuario = $request['success'] ? $request['data'] : null;
-
-        session()->flush('CadSuccess',[  //flush:encaminha a session um unica vez para a view, não acumulando lixo
-            'success'  => $request['success'],
-            'messages' => $request['messages']
-        ]);
-
 
         return view('User.index',[ //chama a page index passado os dados do usuário
             'usuario' => $usuario,

@@ -24,13 +24,16 @@
             try {
 
                 $this->validator->with($data)->passesOrFail(ValidatorInterface::RULE_CREATE);
-                $usuario = $this-> repository->create($data);
+                $usuario = $this->repository->create($data);
 
-                return [
-                    'success'  => true,
-                    'messages' => "Usuário cadastrado",
-                    'data'    => $usuario,
-                ];
+                if($usuario){
+                    return [
+                        'success'  => true,
+                        'messages' => "Usuário cadastrado",
+                        'data'    => $usuario,
+                    ];
+                }
+
 
             } catch (Exception $e) {
                 switch (get_class($e)) {

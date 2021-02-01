@@ -45,7 +45,7 @@ class UsersController extends Controller
     public function Index(){
          $users = $this->repository->all();
 		return view('User.index',[
-            'users' => $users
+            'users' => $users,
         ]);
 	}
     /**
@@ -60,11 +60,13 @@ class UsersController extends Controller
     public function store(UserCreateRequest $request)
     {
         $request = $this->service->store($request->all());  //cria um usuáŕio atraves do UserService
-        $usuario = $request['success'] ? $request['data'] : null;
+        $users = $request['success'] ? $request['data'] : null;
 
-        return view('User.index',[ //chama a page index passado os dados do usuário
-            'usuario' => $usuario,
+        session()->flash('success',[
+            'success' => $request['success'],
+            'messages' => $request['messages']
         ]);
+        return redirect()->route('user.index');
     }
 
     /**

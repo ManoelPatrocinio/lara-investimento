@@ -10,110 +10,27 @@
 }
 
 
-/*
-==========================
-Stylesheet to login page
-==========================
-*/
 
 body{
     background-color: #313636;
-}
+    background-image: url('../asset/images/investiment.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
 
-.login{
-    margin:0px !important;
-}
-
-
-div#background{
-    position:absolute;
-    width:70%;
-    height:100%;
-    margin-left: 0% !important;
-
-}
-#img{
-    width: 100%;
-    height: 100%;
-}
-
-div#conteudo-form{
-    float: right;
-    width:28%;
-    height: 100%;
-    padding: 1%;
-    background-color:#51dca6;
-    background:#51dca6;
 
 }
 
-
-
-div#conteudo-form h1{
-    float: left;
-    width:100%;
-    font:3em 'Fredoka One', cursive;
-    margin-top:50px;
-    color:#f3f3f3;
-    padding:20px;
+.tr-min {
+    display:none;
 }
-
-div#conteudo-form h1{
-    float: left;
-    width:100%;
-    font:3em 'Fredoka One', cursive;
-    margin-top:50px;
-    color:#f3f3f3;
-
-}
-
-div#conteudo-form h3,
-div#conteudo-form form p{
-    float: left;
-    width:100%;
-    font: .8em 'Fredoka One', cursive;
-    color:#f3f3f3;
-    margin-bottom:10px;
-    margin-left:5%;
-}
-
-div#conteudo-form form,
-div#conteudo-form form label{
-    float:left;
-    width:100%;
-    margin-bottom:10px;
-}
-div#conteudo-form form p{
-    font-size:1.25em;
-    margin-left:5%;
-    margin-bottom:10px;
-
-}
-
-div#conteudo-form form{
-    margin-top:10px;
-}
-
-div#conteudo-form form input[type="submit"],
-div#conteudo-form form label input{
-    margin-left:5%;
-    width:80%;
-    height:40px;
-    border-radius:20px;
-    padding:0 20px;
-    border:2px solid #52ca9b;
-    color:#959595;
-    font:1em 'Arial';
-}
-
-div#conteudo-form form input[type="submit"]{
-    width:60%;
-    margin-top:15px;
-    margin-left:20%;
-    background:#00ff9c;
-    text-align: center;
-    font: 1em 'Fredoka One', cursive;
-    color:#f9f9f9;
+@media screen and (max-width: 768px) {
+    .tr-max {
+        display:none;
+    }
+    .tr-min {
+        display:table;
+    }
 }
 
 /*
@@ -122,8 +39,10 @@ Stylesheet to menu-superior page master
 ==========================
 */
 
-nav .brand-logo{
-    align-items: left;
+
+#logo{
+    font-size: 1.5rem;
+
 }
 .i-logo{
     width: 40%;
@@ -161,100 +80,114 @@ nav ul li a:hover{
     color: #00ff9c;
 }
 
+
+
 /*
 ==========================
 Stylesheet to form cad
-==========================
-*/
+==========================*/
 
-div.container-form{
-    background-color: #4d5252;
-    width: 70%;
-    height: 100%;
-    margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 3%;
-    padding: 3%;
+.form-title{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2%;
 }
-div.form-title h3{
-    position: relative;
-    width: 45%;
-    height: 5%;
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-bottom: 3%;
-    font-size: 25px;
-    line-height: 1.2;
-    font-family: Poppins-Medium;
+.form-title h2{
+    color: #f3f3f3;
+    font-family: 'Fredoka One';
+}
+input{
+    border-bottom: none;
+    color: #f3f3f3 !important;
+    font-size: 1.2em;
+    background-color: #313636;
+}
+span{
+    font-family: 'Fredoka One';
+    font-size: 1.3em;
     color: #fff;
+}
+.container-form{
+    width: 80VW;
+    height: 100Vh;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #313636;
+    border-radius: 25px;
+    opacity : 0.9
+}
+
+.form{
+    position: relative;
+    height: 100Vh;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1.5%;
+}
+
+
+.form-input{
+    position: relative;
+    margin-bottom: 30px;
+    width: 50%;
+}
+
+.input-group{
+    justify-content: space-between;
+    border-bottom: none !important;
+    display: inline-block;
 
 }
 
-form.form-padrao label{
-    width: 2%;
-    height: 100%;
-    background-color: #4d5252;
-    font-family: Poppins-Medium;
-    font-size: 15px;
-    padding: 1px 5px;
+.group-item{
+    width: calc((100% - 60px) / 2);
 }
-form.form-padrao label span{
-    background-color: #4d5252;
+
+.row{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+.form-submit{
+    position: relative;
+    width: 35%;
+    height: 40%;
+    margin-left:30%;
+    background-color: #12a86f;
+    padding: 1%;
+    border-radius: 25px;
+}
+
+.submit input{
+    background-color: #12a86f;
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/*
+==========================
+Stylesheet to users table
+==========================*/
+
+.conteiner-table{
+    width: 100vw;
+    height: 100vh;
+    background-color: #313636;
+    opacity: 0.9;
+}
+
+
+td{
+    font-size: 1.3em;
     color: #f3f3f3;
 }
-
-form.form-padrao label input{
-    position: relative;
-    display: block;
-    width:100%;
-    height:calc(2.25rem + 2px);
-    background-color: #4d5252;
-    color: #1e1f1f;
-    padding:.375rem .75rem;
-
-}
-
-form.form-padrao label.submit input{
-    width: 50%;
-    height: 100%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 25px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Montserrat-Bold;
-    font-size: 20px;
-    line-height: 1.5;
-    background: #0ad181;
-    border-color: #0aaa67;
-    border-radius: 25px;
-    color: #fff;
-}
-
-div.container-table{
-    background-color: #e3e8e8;
-    width: 100%;
-    height: 100%;
-    margin-top: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0%;
-    padding: 3%;
-}
-
-tr.Tbcabecalho th{
-    border: 2px solid #0d0e0d;
-    background-color: #4d5252;
-    color: #fff;
-    margin-bottom: 1%;
-    text-align: center;
-}
-
-.Tbconteudo td{
-    border: 1px solid #0a0a0a;
-    text-align: center;
-}
-
-

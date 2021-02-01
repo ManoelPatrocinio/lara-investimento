@@ -44,7 +44,7 @@ class User extends Authenticatable
     public function setPasswordAttribute($value ){
         $this->attributes['password'] = env('PASSWOR_HASH') ? bcrypt($value) : $value;
     }
-
+    /*
     public function getCpfAttribute(){
         $cpf = $this->attributes['cpf'];
         return substr($cpf,0,3).'.'.substr($cpf,3,3) . '.' . substr($cpf,7,3). '-' . substr($cpf,-2);
@@ -63,7 +63,7 @@ class User extends Authenticatable
         $birth = $birth[2] . '/' . $birth[1] . '/'. $birth[0];
         return $birth;
     }
-
+    */
 }
 
 

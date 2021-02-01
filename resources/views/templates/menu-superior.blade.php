@@ -1,6 +1,7 @@
 <nav >
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Investindo
+        <a href="#" class="brand-logo" id="logo">
+            <img src=" {{asset('asset/images/money.png')}}" width="120" height="75" class="d-inline-block align-top" alt="">
         </a>
 
         <a href="#" data-activates="menu-mobile" class="button-collapse">

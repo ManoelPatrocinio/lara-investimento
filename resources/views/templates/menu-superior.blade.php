@@ -15,7 +15,7 @@
             </li>
 
             <li>
-                <a href="">Instituições</a>
+                <a href="{{ route('institutions.index')}}">Instituições</a>
             </li>
 
             <li>

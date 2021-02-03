@@ -7,7 +7,7 @@
 @section('conteudo-view')
 
     @if(session('success'))
-        echo'<script>alert("Usuario Cadastrado") </script>';
+        <script>alert("Operação realizada com Sucesso!")</script>
     @endif
 
     <div class="container-form">
@@ -65,6 +65,8 @@
     </div>
 
 <div class="conteiner-table">
+
+    <div class="form-title"><h2>Usuários Cadastros </h2></div>
     <table>
         <thead>
             <td>Nome</td>
@@ -74,6 +76,7 @@
             <td>E-mail</td>
             <td>Status</td>
             <td>Permissão</td>
+            <td>Menu</td>
         </thead>
         <tbody>
             @foreach($users as $user)
@@ -85,6 +88,11 @@
                 <td>{{ $user->email}}</td>
                 <td>{{ $user->status}}</td>
                 <td>{{ $user->permission}}</td>
+                <td>
+                    {!! Form::open(['route'=> ['user.destroy', $user->id], 'method'=>'DELETE' ]) !!}
+                    {!! Form::submit('Remover') !!}
+                    {!! Form::close() !!}
+                </td>
             </tr>
             @endforeach
         </tbody>

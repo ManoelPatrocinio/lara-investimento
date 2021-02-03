@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <title>Investindo</title>
 
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
+    <link rel="stylesheet"  href="{{ asset('css/stylesheet.css') }} ">
+
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

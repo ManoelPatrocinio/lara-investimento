@@ -12,26 +12,16 @@
 
 
 body{
+
+    width: 100vw;
+    height: 100vh;
     background-color: #313636;
-    background-image: url('../asset/images/investiment.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     align-items: center;
 
 
 }
 
-.tr-min {
-    display:none;
-}
-@media screen and (max-width: 768px) {
-    .tr-max {
-        display:none;
-    }
-    .tr-min {
-        display:table;
-    }
-}
+
 
 /*
 ==========================
@@ -109,21 +99,25 @@ span{
     color: #fff;
 }
 .container-form{
-    width: 80VW;
+    width: 100VW;
     height: 100Vh;
+    background-image: url('../asset/images/investiment.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.form{
+    display: block;
+    position: relative;
+    width: 80VW;
     margin-right: auto;
     margin-left: auto;
     background-color: #313636;
     border-radius: 25px;
-    opacity : 0.9
-}
+    opacity : 0.9;
+    padding: 3%;
 
-.form{
-    position: relative;
-    height: 100Vh;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 1.5%;
 }
 
 
@@ -180,14 +174,150 @@ Stylesheet to users table
 ==========================*/
 
 .conteiner-table{
+    display: block;
     width: 100vw;
-    height: 100vh;
     background-color: #313636;
-    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 1%;
+
 }
 
-
-td{
-    font-size: 1.3em;
+table {
+    width: 95vw;
+    max-width: 100vw;
+    margin-right: -2%;
+    border-collapse: collapse;
+    text-align: left;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
     color: #f3f3f3;
 }
+
+table thead td {
+
+    font-size: 1.2em;
+    color: #f3f3f3;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #eee;
+    background-color: #129966;
+}
+
+table tbody tr td {
+
+    display: table-cell;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+table tbody tr {
+
+    border: none;
+    display: table-row;
+}
+
+
+table tbody tr td button {
+
+    display: inline-block;
+    padding: 10px 15px;
+    position: initial;
+    transform: translate(0);
+    width: auto;
+}
+
+table tbody tr td button {
+
+    background: #4CAF50;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(34, 34, 34, 0.2);
+    color: #fff;
+    font-weight: 700;;
+    padding: 7px 0;
+    width: 100%;
+}
+
+table thead {
+
+    display: table-header-group;
+    font-weight: 500;
+}
+
+
+table tbody tr td:before {
+
+    display: none;
+}
+
+table tbody tr td button:hover, table tbody tr td button:focus {
+
+    background: #a795fe;
+    cursor: pointer;
+}
+
+@media all and (max-width: 800px) {
+
+    table tbody tr td {
+
+        display: block;
+        text-align: right;
+        text-align: center;
+    }
+
+    table tbody tr td:before {
+
+        content: attr(data-title);
+        position: absolute;
+        left: 15px;
+        display: block;
+        font-weight: 600;
+        font-size: 1em;
+
+    }
+
+    table {
+        margin-top: 3%;
+        border: none;
+    }
+
+    table thead {
+
+        display: none;
+    }
+
+    table tbody tr {
+
+        margin-bottom: 2%;
+        display: block;
+        border-bottom: 2px solid #a795fe;
+        box-shadow: 0 4px 8px #f1f0f5;
+    }
+
+
+}
+
+/*
+==========================
+Stylesheet to institution form
+==========================*/
+
+#container-form{
+    height: auto;
+    margin-bottom: 3%;
+}
+
+/*
+Form [type ="submit"]{
+    width: 40%;
+    font-weight: bolder;
+    background-color: #77dc7b;
+    padding: 2%;
+    border-radius: 15px;
+}
+*/

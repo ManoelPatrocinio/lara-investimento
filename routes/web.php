@@ -29,3 +29,4 @@ Route::get('/dashboard', ['as'=> 'user.dashboard', 'uses' => 'DashboardControlle
 
 
 Route::resource('user', 'UsersController',[]); // define um grupo rotas em relação a um objeto
+Route::resource('institutions', 'InstitutionsController',[]);

@@ -19,7 +19,7 @@
             </li>
 
             <li>
-                <a href="">Grupos</a>
+                <a href="{{ route('group.index')}}">Grupos</a>
             </li>
 
         </ul>

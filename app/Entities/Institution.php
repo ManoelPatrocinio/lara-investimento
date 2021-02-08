@@ -23,6 +23,8 @@ class Institution extends Model implements Transformable
      *
      * @var array
      */
+
+
     protected $fillable = ['name'];
     public $timestamps  = true;
 

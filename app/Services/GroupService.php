@@ -2,38 +2,48 @@
 
     namespace App\Services;
 
-    use App\Repositories\InstitutionRepository;
-    use App\Validators\InstitutionValidator;
+    use App\Repositories\GroupRepository;
+    use App\Validators\GroupValidator;
     use Prettus\Validator\Contracts\ValidatorInterface;
     use Prettus\Validator\Exceptions\ValidatorException;
+
     use Exception;
     use Illuminate\Database\QueryException;
 
-    class InstitutionsService{
+    class GroupService{
 
         private $repository;
         private $validator;
 
-        public function __construct( InstitutionRepository $repository, InstitutionValidator $validator){
+        public function __construct( GroupRepository $repository, GroupValidator $validator){
             $this->repository = $repository;
             $this->validator  = $validator;
         }
-
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @param  GroupCreateRequest $request
+         *
+         * @return \Illuminate\Http\Response
+         *
+         * @throws \Prettus\Validator\Exceptions\ValidatorException
+         */
         public function store($data){
             try {
 
                 $this->validator->with($data)->passesOrFail(ValidatorInterface::RULE_CREATE);
-                $institution = $this->repository->create($data);
+                $Group = $this->repository->create($data);
 
                 return [
                     'success'  => true,
-                    'messages' => "Instituição cadastrado",
-                    'data'    => $institution,
+                    'messages' => "Grupo Cadastrado",
+                    'data'    => $Group,
                 ];
 
 
 
             } catch (Exception $e) {
+                dd($e);
                 switch (get_class($e)) {
                   case QueryException::class :     return ['success' => false,'messages' =>  $e->getMessage()];
                   case ValidatorException::class : return ['success' => false,'messages' =>  $e->getMessage()];
@@ -44,15 +54,15 @@
             }
         }
 
-        public function destroy ($institution_id){
+        public function destroy ($group_id){
             try {
 
-                $this->repository->delete($institution_id);
+                $this->repository->delete($group_id);
 
 
                 return [
                     'success'  => true,
-                    'messages' => "Instituição Removida",
+                    'messages' => "Grupo removido",
                     'data'    => null,
                 ];
 
@@ -68,5 +78,5 @@
                 }
             }
         }
-
     }
+?>

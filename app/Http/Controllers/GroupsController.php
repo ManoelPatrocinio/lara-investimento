@@ -7,34 +7,48 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
-use App\Http\Requests\InstitutionCreateRequest;
-use App\Http\Requests\InstitutionUpdateRequest;
+use App\Http\Requests\GroupCreateRequest;
+use App\Http\Requests\GroupUpdateRequest;
+use App\Repositories\GroupRepository;
 use App\Repositories\InstitutionRepository;
-use App\Validators\InstitutionValidator;
-use App\Services\InstitutionsService;
+use App\Repositories\UserRepository;
+use App\Validators\GroupValidator;
+use App\Services\GroupService;
+
 /**
- * Class InstitutionsController.
+ * Class GroupsController.
  *
  * @package namespace App\Http\Controllers;
  */
-class InstitutionsController extends Controller
+class GroupsController extends Controller
 {
-
+    /**
+     * @var GroupRepository
+     */
     protected $repository;
-    protected $validator;
-    protected $service;
 
     /**
-     * InstitutionsController constructor.
-     *
-     * @param InstitutionRepository $repository
-     * @param InstitutionValidator $validator
+     * @var GroupValidator
      */
-    public function __construct(InstitutionRepository $repository, InstitutionValidator $validator, InstitutionsService $service)
+    protected $validator;
+    protected $service;
+    protected $institutionsRepository;
+    protected $userRepository;
+
+    /**
+     * GroupsController constructor.
+     *
+     * @param GroupRepository $repository
+     * @param GroupValidator $validator
+     */
+    public function __construct(GroupRepository $repository, GroupValidator $validator, GroupService $service,
+                                InstitutionRepository $institutionsRepository,UserRepository $userRepository)
     {
-        $this->repository = $repository;
-        $this->validator  = $validator;
-        $this->service   = $service;
+        $this->institutionsRepository = $institutionsRepository;
+        $this->userRepository         = $userRepository;
+        $this->repository             = $repository;
+        $this->validator              = $validator;
+        $this->service                = $service;
     }
 
     /**
@@ -44,31 +58,35 @@ class InstitutionsController extends Controller
      */
     public function index()
     {
-        $institutions = $this->repository->all();
-		return view('institutions.index',[
-            'institutions' => $institutions,
+        $groups            = $this->repository->all();
+        $user_list         = $this->userRepository->selectBoxList();
+        $institutions_list = $this->institutionsRepository->selectBoxList();
+
+		return view('groups.index',[
+            'groups'            => $groups,
+            'user_list'         => $user_list,
+            'institutions_list' => $institutions_list,
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  InstitutionCreateRequest $request
+     * @param  GroupCreateRequest $request
      *
      * @return \Illuminate\Http\Response
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function store(InstitutionCreateRequest $request)
+    public function store(GroupCreateRequest $request)
     {
-
         $request = $this->service->store($request->all());  //cria uma instituição atraves do Service
 
         session()->flash('success',[
             'success'  => $request['success'],
             'messages' => $request['messages']
         ]);
-        return redirect()->route('institutions.index');
+        return redirect()->route('group.index');
     }
 
     /**
@@ -80,12 +98,16 @@ class InstitutionsController extends Controller
      */
     public function show($id)
     {
-        $institution = $this->repository->find($id);
+        $group = $this->repository->find($id);
 
+        if (request()->wantsJson()) {
 
-        return view('institutions.show',[
-            'institutions' => $institution,
-        ]);
+            return response()->json([
+                'data' => $group,
+            ]);
+        }
+
+        return view('group.show', compact('group'));
     }
 
     /**
@@ -97,32 +119,32 @@ class InstitutionsController extends Controller
      */
     public function edit($id)
     {
-        $institution = $this->repository->find($id);
+        $group = $this->repository->find($id);
 
-        return view('institutions.edit', compact('institution'));
+        return view('group.edit', compact('group'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  InstitutionUpdateRequest $request
+     * @param  GroupUpdateRequest $request
      * @param  string            $id
      *
      * @return Response
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(InstitutionUpdateRequest $request, $id)
+    public function update(GroupUpdateRequest $request, $id)
     {
         try {
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
-            $institution = $this->repository->update($request->all(), $id);
+            $group = $this->repository->update($request->all(), $id);
 
             $response = [
-                'message' => 'Institution updated.',
-                'data'    => $institution->toArray(),
+                'message' => 'Group updated.',
+                'data'    => $group->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -153,14 +175,15 @@ class InstitutionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($institution_id)
+    public function destroy($goups_id)
     {
-        $request = $this->service->destroy($institution_id);  //cria um usuáŕio atraves do UserService
+        $request = $this->service->destroy($goups_id);  //cria um usuáŕio atraves do UserService
 
         session()->flash('success',[
             'success' => $request['success'],
             'messages' => $request['messages']
         ]);
-        return redirect()->route('institutions.index');
+        return redirect()->route('group.index');
+
     }
 }

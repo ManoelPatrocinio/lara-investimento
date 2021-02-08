@@ -21,9 +21,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
 
-
-
-</body>
     @yield('css-view')
 
 </head>

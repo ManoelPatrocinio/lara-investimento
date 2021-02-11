@@ -8,6 +8,7 @@
 
     @if(session('success'))
         <script>alert("Operação realizada com Sucesso!")</script>
+    
     @endif
 
     <div class="container-form">
@@ -82,9 +83,9 @@
             @foreach($users as $user)
             <tr>
                 <td>{{ $user->name}}</td>
-                <td>{{ $user->cpf}}</td>
-                <td>{{ $user->phone}}</td>
-                <td>{{ $user->birth}}</td>
+                <td>{{ $user->formatted_cpf}}</td>
+                <td>{{ $user->formatted_phone}}</td>
+                <td>{{ $user->formatted_birth}}</td>
                 <td>{{ $user->email}}</td>
                 <td>{{ $user->status}}</td>
                 <td>{{ $user->permission}}</td>

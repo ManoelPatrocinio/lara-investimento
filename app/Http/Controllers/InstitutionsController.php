@@ -80,11 +80,11 @@ class InstitutionsController extends Controller
      */
     public function show($id)
     {
-        $institution = $this->repository->find($id);
+        $institutions = $this->repository->find($id);
 
 
         return view('institutions.show',[
-            'institutions' => $institution,
+            'institutions' => $institutions,
         ]);
     }
 

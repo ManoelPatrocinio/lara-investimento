@@ -24,33 +24,8 @@
             {!!Form::close()!!}
         </div>
     </div>
+    <div class="form-title"><h2> Grupos Cadastrados </h2></div>
+    @include('groups.list', ['groups_list' => $groups])
 
-    <div class="conteiner-table">
-        <div class="form-title"><h2>Instituições Cadastradas </h2></div>
-        <table class="table-inst">
-            <thead>
-                <tr>
-                    <td>Grupo</td>
-                    <td>Instituição</td>
-                    <td>Responsável</td>
-                    <td>Opção</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($groups as $group)
-                <tr>
-                    <td>{{ $group->name }}</td>
-                    <td>{{ $group->institutions->name }}</td>
-                    <td>{{ $group->user->name }}</td>
-                    <td>
-                        {!! Form::open(['route'=> ['institutions.destroy', $group->id], 'method'=>'DELETE' ]) !!}
-                        {!! Form::submit('Remover') !!}
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
 @endsection
 

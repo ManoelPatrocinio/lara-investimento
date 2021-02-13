@@ -44,6 +44,11 @@ class User extends Authenticatable
         $this->attributes['password'] = env('PASSWOR_HASH') ? bcrypt($value) : $value;
     }
 
+    public function groups(){
+        // cria um relacionamento do tipo " N p\ N"
+        return $this->belongsToMany(Group::class, 'user_groups');
+    }
+
     /*
     * Mascara para exibição dos atributos de User
     */

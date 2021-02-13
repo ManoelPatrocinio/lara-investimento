@@ -15,6 +15,7 @@
                 <td>{{ $group->name }}</td>
                 <td>{{ $group->institutions->name }}</td>
                 <td>{{ $group->user->name }}</td>
+
                 <td>
                     {!! Form::open(['route'=> ['institutions.destroy', $group->id], 'method'=>'DELETE' ]) !!}
                     {!! Form::submit('Remover') !!}

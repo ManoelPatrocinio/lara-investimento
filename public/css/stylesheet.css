@@ -75,7 +75,8 @@ nav ul li a:hover{
 /*
 ==========================
 Stylesheet to form cad
-==========================*/
+==========================
+*/
 
 .form-title{
     width: 100%;
@@ -323,4 +324,34 @@ select{
     color: #fff !important;
     font-weight: bold !important;
     font-size: 1.1em !important;
+}
+
+
+/*
+==========================
+Stylesheet to Group.show
+==========================
+*/
+
+.group-title{
+    width: auto;
+    height: auto;
+    background-color: #12a86f;
+    padding: 1%;
+}
+
+.group-title h1, h2, h3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Fredoka One';
+    color: #fff;
+}
+
+.group-title h2, h3{
+    padding-top:1% ;
+}
+
+.connect-user-group{
+    padding: 2%;
 }

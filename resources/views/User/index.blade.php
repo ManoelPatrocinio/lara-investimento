@@ -8,7 +8,7 @@
 
     @if(session('success'))
         <script>alert("Operação realizada com Sucesso!")</script>
-    
+
     @endif
 
     <div class="container-form">

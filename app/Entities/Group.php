@@ -27,14 +27,24 @@ class Group extends Model implements Transformable
     protected $fillable = ['name','user_id','institution_id'];
 
 
-    // cria um relacionamento do tipo "pertence"
+
 
     public function user(){
+        // cria um relacionamento do tipo "pertence" entre grupos e usuarios
         return $this->belongsTo(User::class,'user_id');
     }
 
+
     public function institutions(){
+        // cria um relacionamento do tipo "pertence" entre grupos e instituições
         return $this->belongsTo(Institution::class,'institution_id');
+    }
+
+
+
+    public function usersRelationship(){
+        // cria um relacionamento do tipo " N p\ N entre groupos e usuário"
+        return $this->belongsToMany(User::class, 'user_groups', 'user_id', 'group_id');
     }
 
     public $timestamps  = true;

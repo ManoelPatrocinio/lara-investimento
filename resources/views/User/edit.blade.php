@@ -16,7 +16,7 @@
         <div class="form">
             <div class="form-title"><h2>Cadastro De Usuário</h2></div>
 
-            {!! Form::open(['route' => 'user.store', 'method' => 'post', 'class'=> 'form-padrao']) !!}
+            {!! Form::model($users,['route' => ['user.update',$users->id], 'method' => 'put', 'class'=> 'form-padrao']) !!}
 
                 <div class="form-input">
                     @include('templates.formulario.input', ['label'=> 'NOME','input' => 'name', 'attributes' => ['placeholder'=> '']])
@@ -58,14 +58,13 @@
                 </div>
 
                 <div class="form-submit">
-                    @include('templates.formulario.submit',['input'=> 'Cadastrar'])
+                    @include('templates.formulario.submit',['input'=> 'Atualizar'])
                 </div>
 
             {!! Form::close([]) !!}
         </div>
     </div>
 
-    @include('User.list', ['user_list' => $users])
 
     @endsection
 

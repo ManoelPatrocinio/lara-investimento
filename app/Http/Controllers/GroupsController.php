@@ -129,8 +129,15 @@ class GroupsController extends Controller
     public function edit($id)
     {
         $group = $this->repository->find($id);
+        $user_list         = $this->userRepository->selectBoxList();
+        $institutions_list = $this->institutionsRepository->selectBoxList();
 
-        return view('group.edit', compact('group'));
+
+        return view('groups.edit', [
+            'group' => $group,
+            'user_list' => $user_list ,
+            'institutions_list' => $institutions_list ,
+        ]);
     }
 
     /**
@@ -143,37 +150,15 @@ class GroupsController extends Controller
      *
      * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
-    public function update(GroupUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        try {
+        $request = $this->service->update($request->all(),$id);  //cria uma instituição atraves do Service
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
-
-            $group = $this->repository->update($request->all(), $id);
-
-            $response = [
-                'message' => 'Group updated.',
-                'data'    => $group->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
-        }
+        session()->flash('success',[
+            'success'  => $request['success'],
+            'messages' => $request['messages']
+        ]);
+        return redirect()->route('group.index');
     }
 
 

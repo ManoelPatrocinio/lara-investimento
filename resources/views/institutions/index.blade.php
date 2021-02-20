@@ -39,6 +39,7 @@
                         {!! Form::submit('Remover') !!}
                         {!! Form::close() !!}
                         <a href="{{ route('institutions.show',$inst->id) }}">Destalhes</a>
+                        <a href="{{ route('institutions.edit',$inst->id) }}">Editar</a>
                     </td>
                 </tr>
                 @endforeach

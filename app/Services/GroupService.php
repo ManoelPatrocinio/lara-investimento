@@ -85,6 +85,32 @@
             }
         }
 
+        public function update($data, $id){
+            try {
+
+                $this->validator->with($data)->passesOrFail(ValidatorInterface::RULE_UPDATE);
+                $Group = $this->repository->update($data,$id);
+
+                return [
+                    'success'  => true,
+                    'messages' => "Grupo Atualizado",
+                    'data'    => $Group,
+                ];
+
+
+
+            } catch (Exception $e) {
+                dd($e);
+                switch (get_class($e)) {
+                  case QueryException::class :     return ['success' => false,'messages' =>  $e->getMessage()];
+                  case ValidatorException::class : return ['success' => false,'messages' =>  $e->getMessage()];
+                  case Exception::class :          return ['success' => false,'messages' =>  $e->getMessage()];
+
+                  default:                         return ['success' => false,'messages' =>  get_class($e)];
+                }
+            }
+        }
+
         public function destroy ($group_id){
             try {
 
@@ -109,5 +135,6 @@
                 }
             }
         }
+
     }
 ?>

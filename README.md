@@ -7,62 +7,44 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h4 align="center"> 
+	🚧  Projeto em construção...  🚧
+</h4>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/ManoelPatrocinio/portifolio/blob/main/LICENSE) 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Grupo de Investimento
+ Sistema para gerenciamento de grupos de investimento financeiro. Desenvolvido para aprendizado do framework laravel,comintegração ao baco de dados Mysql .
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tecnologias usadas
+  * Laravel
+  * Bootstrap
+  * HTML5 
+  * CSS 3
+  * Mysql
+  
+## Layout
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![lara_login](https://user-images.githubusercontent.com/47128362/127780207-7739ee27-e1b9-408e-a4f5-818cfd27dc02.png)
 
-## Laravel Sponsors
+### Cadastro dos Grupos
+![lara_grupos](https://user-images.githubusercontent.com/47128362/127780223-7d996ebc-6ef2-4640-ab68-fbf8eb03638d.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
+#### And more...
 
 ## Ícones
 :package: nova funcionalidade
 :up: atualização
 :beetle: correção de bug
 :checkered_flag: release
+
+
+
+### Autor
+
+Feito por Manoel Patrocinio 👋🏽 Entre em contato!
+
+[![instagram Badge](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white=https://www.instagram.com/patrocinioiii/)](https://www.instagram.com/patrocinioiii/) [![Linkedin Badge](https://img.shields.io/badge/-Manoel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://linkedin.com/in/manoel-patrocinio-1b342b203/)](https://linkedin.com/in/manoel-patrocinio-1b342b203) 
+[![Gmail Badge](https://img.shields.io/badge/-manoelpatrocinio99@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:manoelpatrocinio99@gmail.com)](mailto:manoelpatrocinio99@gmail.com)
